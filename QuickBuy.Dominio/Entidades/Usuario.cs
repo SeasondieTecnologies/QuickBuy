@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using QuickBuy.Dominio.Contratos;
+using System.Collections.Generic;
 
 namespace QuickBuy.Dominio.Entidades
 {
@@ -10,8 +11,8 @@ namespace QuickBuy.Dominio.Entidades
         public string Nome { get; set; }
         public string Sobrenome { get; set; }
 
-        //O usisario pode ter nenhum ou vairios pedidos.
-        public ICollection<Pedido> Pedidos { get; set; }
+        //O usuario pode ter nenhum ou vairios pedidos.
+        public virtual ICollection<Pedido> Pedidos { get; set; }
 
         public override void Validate()
         {
