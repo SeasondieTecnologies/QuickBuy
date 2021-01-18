@@ -4,7 +4,9 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using QuickBuy.Dominio.Contratos;
 using QuickBuy.Repositorio.Context;
+using QuickBuy.Repositorio.Repositorios;
 
 namespace QuickBuy.Web
 {
@@ -30,7 +32,8 @@ namespace QuickBuy.Web
 
             services.AddDbContext<QuickBuyContexto>(option =>option.UseLazyLoadingProxies()
                                                              .UseMySql(connectionString, 
-                                                                                             m => m.MigrationsAssembly("QuickBuy.Repositorio")));
+                                                                                        m => m.MigrationsAssembly("QuickBuy.Repositorio")));
+            services.AddScoped<IProdutoRepositorio, ProdutoRepositorio>();
 
             // In production, the Angular files will be served from this directory
             services.AddSpaStaticFiles(configuration =>

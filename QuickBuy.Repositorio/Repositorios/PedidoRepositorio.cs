@@ -1,11 +1,17 @@
 ﻿using QuickBuy.Dominio.Contratos;
 using QuickBuy.Dominio.Entidades;
+using QuickBuy.Repositorio.Context;
 using System.Collections.Generic;
 
 namespace QuickBuy.Repositorio.Repositorios
 {
     public class PedidoRepositorio : BaseRepositorio<ItemPedido>, IPedidoRepositorio
     {
+        public PedidoRepositorio(QuickBuyContexto quickBuyContexto) : base(quickBuyContexto)
+        {
+
+        }
+
         public void Adicionar(Pedido entity)
         {
             throw new System.NotImplementedException();
