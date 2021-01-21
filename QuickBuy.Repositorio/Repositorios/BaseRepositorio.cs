@@ -28,7 +28,7 @@ namespace QuickBuy.Repositorio.Repositorios
 
         public TEntity ObterPorId(int Id)
         {
-            return QuickBuyContexto.Set<TEntity>().Find();
+            return QuickBuyContexto.Set<TEntity>().Find( Id );
         }
 
         public IEnumerable<TEntity> ObterTodos()
@@ -45,7 +45,7 @@ namespace QuickBuy.Repositorio.Repositorios
 
         public void Dispose()
         {
-            throw new System.NotImplementedException();
+            QuickBuyContexto.Dispose();
         }
     }
 }

@@ -5,7 +5,7 @@ using System;
 
 namespace QuickBuy.Web.Controllers
 {
-    [Route("api/[Controller]")]
+    [Route("api/[controller]")]
     public class ProdutoController:Controller
     {
         private readonly IProdutoRepositorio _produtoRepositorio;
@@ -21,10 +21,7 @@ namespace QuickBuy.Web.Controllers
             try
             {
                 return Ok(_produtoRepositorio.ObterTodos());
-                //if(condicao == false)
-                //{
-                //    return BadRequest("")
-                //}
+               
             }catch(Exception ex)
             {
                 return BadRequest(ex.ToString());
